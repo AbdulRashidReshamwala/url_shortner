@@ -71,6 +71,9 @@
                 document.getElementById('s-url').href = '/' + result.slug
                 document.getElementById('s-url-wrap').style.display = 'block'
             }
+            else {
+                alert('Slug Already in use')
+            }
         }
 
         document.getElementById('btn').addEventListener('click', submit, false)
