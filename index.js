@@ -43,6 +43,8 @@ app.get("/:id", async (req, res, next) => {
 
 app.post("/", async (req, res, next) => {
   let { slug, url } = req.body;
+  slug = slug.toLowerCase().trim();
+  url = url.toLowerCase().trim();
   try {
     await schema.validate({
       slug,
@@ -85,5 +87,5 @@ app.use((error, req, res, next) => {
 
 const port = process.env.PORT || 1337;
 app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+  console.log(`Listening at Port : ${port}`);
 });

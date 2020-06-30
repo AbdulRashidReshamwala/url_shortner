@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "deploy": "gcloud app deploy --project=pico-url-shortner -q"
   },
   "keywords": [],
   "author": "",
