@@ -43,8 +43,11 @@ app.get("/:id", async (req, res, next) => {
 
 app.post("/", async (req, res, next) => {
   let { slug, url } = req.body;
+  if (!slug || slug.trim() === "") {
+    slug = nanoid(6);
+  }
   slug = slug.toLowerCase().trim();
-  url = url.toLowerCase().trim();
+  url = url.trim();
   try {
     await schema.validate({
       slug,
